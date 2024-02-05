@@ -1,11 +1,6 @@
 # cypress13-cucumber-bdd
 Projeto Cypress 13 + Cucumber e PageObjects.
 
-# Project structure cypress + cucumber
-[![JavaScript Version][javascript-image]][javascript-url]
-[![Cucumber Version][cucumber-image]][cucumber-url]
-[![Cypress Version][cypress-image]][cypress-url]
-
 Estrutura do projeto:
 ```
 ./
