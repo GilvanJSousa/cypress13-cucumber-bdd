@@ -1,11 +1,9 @@
-#language: pt
-Funcionalidade: Login no Swag Labs
+Feature: 1.000 - Validações de Login
+  Como um usuario do site Sabesp
+  Cliente quer completar o login
+  Para que tenha a validação das funcionalidades de usuario
 
-Contexto:
-Dado que eu acesse a página de autenticação do saucedemo
-
-Cenario: Autenticação Válida
-Quando eu digitar o usuário "standard_user"
-E a senha "secret_sauce"
-E confirmar login
-Então deve ser exibido o título "Products"
+  Scenario: 1.001 - Login com sucesso
+    Given que o cliente realizou o login
+    When inseriu CPF e senha
+    Then O sistema deverá direcionar para home logada

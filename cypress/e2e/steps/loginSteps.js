@@ -4,27 +4,17 @@ import { loginPage } from '../../pages/login.page';
 const users = require('../../fixtures/login.json')
 
 
-Given("que eu acesse a página de autenticação do saucedemo", () => {
-    loginPage.acessarSauceHome()
-})
 
-When("eu digitar o usuário {string}", (usuario) => {
-    loginPage.digitarUsuario(usuario)
-})
+Given(/^que o cliente realizou o login$/, () => {
+	loginPage.acessarSabesp()
+});
 
-And("a senha {string}", (password) => {
-    loginPage.digitarSenha(password)
-})
+When(/^inseriu CPF e senha$/, () => {
+	loginPage.digitarCpf(users.cpf)
+    loginPage.digitarSenha(users.senha)
+});
 
-And("confirmar login", () => {
-    loginPage.confirmarLogin()
-})
+Then(/^O sistema deverá direcionar para home logada$/, () => {
+	loginPage.confirmarLogin()
+});
 
-Then("deve ser exibida a logo do {string}", (text) => {
-    loginPage.validarLoginComTextoDaLogo(text)
-})
-
-
-Then("deve ser exibido o título {string}", (text) => {
-    loginPage.validarTituloDaPagina(text)
-})

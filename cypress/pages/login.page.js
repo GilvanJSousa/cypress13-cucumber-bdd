@@ -1,24 +1,25 @@
 class LoginPage {
     // Pode ser feito por "fluxo": elementos + ações
 
-    acessarSauceHome() {
-        cy.visit('https://www.saucedemo.com/')
+    acessarSabesp() {
+        cy.visit('https://sabesp-novaagv-hml.engdb.com.br/')
+        cy.get('.botao-aceitar').click({ force: true })
     }
 
-    digitarUsuario(user) {
-        cy.get('[data-test="username"]').type(user)
+    digitarCpf() {
+        cy.get('#cpf').type(cpf)
     }
 
-    digitarSenha(pass) {
-        cy.get('[data-test="password"]').type(pass, { log: false })
+    digitarSenha() {
+        cy.get('#senha').type(senha)
     }
 
     confirmarLogin() {
-        cy.get('[data-test="login-button"]').click()
+        cy.get('#login-component_logar').click({ force: true })
     }
 
     validarLoginComTextoDaLogo(text) {
-        cy.get('.app_logo').should('have.text', text)
+        cy.get('h1').should('have.text', 'Agência Virtual')
     }
 
     validarTituloDaPagina(text) {
