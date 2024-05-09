@@ -2,10 +2,8 @@ const { defineConfig } = require("cypress");
 const cucumber = require("cypress-cucumber-preprocessor").default;
 
 module.exports = defineConfig({
-  projectId: 'q2yud3',
   e2e: {
-
-    baseUrl: 'https://www.saucedemo.com/',
+    baseUrl: 'https://sabesp-novaagv-hml.engdb.com.br/',
     specPattern: "**/*.feature",
 
     setupNodeEvents(on, config) {
